@@ -1,7 +1,7 @@
-name: smooth_corners
-description: A new Flutter package project.
+name: flutterellipse_shape
+description: A package for using super-ellipse shapes in flutter.
 version: 0.0.1
-author:
+author: salby
 homepage:
 
 environment:
