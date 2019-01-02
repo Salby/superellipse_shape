@@ -2,12 +2,12 @@ import 'dart:math';
 import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 
-class SuperEllipse extends ShapeBorder {
+class SuperEllipseShape extends ShapeBorder {
 
   final double n;
   final BorderSide side;
 
-  SuperEllipse({
+  SuperEllipseShape({
     @required this.n,
     this.side = BorderSide.none,
   }) : assert(side != null);
@@ -17,7 +17,7 @@ class SuperEllipse extends ShapeBorder {
 
   @override
   ShapeBorder scale(double t) {
-    return SuperEllipse(
+    return SuperEllipseShape(
       n: n,
       side: side.scale(t),
     );

@@ -2,6 +2,8 @@
 
 A flutter package for creating superellipse shapes.
 
+![Screenshot of a superellipse in flutter](https://i.imgur.com/c5lUSuf.png)
+
 ## Getting Started
 
 This project is a starting point for a Dart
