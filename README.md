@@ -1,6 +1,6 @@
 # flutter_superellipse
 
-A new Flutter package project.
+A flutter package for creating superellipse shapes.
 
 ## Getting Started
 
