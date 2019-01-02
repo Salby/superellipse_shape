@@ -1,4 +1,4 @@
-# smooth_corners
+# flutter_superellipse
 
 A new Flutter package project.
 
