@@ -4,6 +4,26 @@
 
 A package for creating superellipse shapes in flutter.
 
+```dart
+class SuperEllipseDemo extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    
+    return Material(
+      color: Colors.blueAccent[400],
+      shape: SuperEllipseShape(5.0),
+      child: Container(
+        width: 100.0,
+        height: 100.0,
+      ),
+    );
+
+  }
+
+}
+```
+
 ## Getting Started
 
 This project is a starting point for a Dart
