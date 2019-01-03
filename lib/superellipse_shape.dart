@@ -7,10 +7,10 @@ class SuperEllipseShape extends ShapeBorder {
   final double n;
   final BorderSide side;
 
-  SuperEllipseShape({
-    @required this.n,
+  SuperEllipseShape(this.n, {
     this.side = BorderSide.none,
-  }) : assert(side != null);
+  }) : assert(n != null),
+       assert(side != null);
 
   @override
   EdgeInsetsGeometry get dimensions => EdgeInsets.all(side.width);
@@ -18,7 +18,7 @@ class SuperEllipseShape extends ShapeBorder {
   @override
   ShapeBorder scale(double t) {
     return SuperEllipseShape(
-      n: n,
+      n,
       side: side.scale(t),
     );
   }

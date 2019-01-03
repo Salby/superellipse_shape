@@ -1,8 +1,8 @@
-# flutter_superellipse
+# Superellipse Shape
 
-A flutter package for creating superellipse shapes.
+![Superellipses in flutter!](https://i.imgur.com/HbfbgBL.png)
 
-![Screenshot of a superellipse in flutter](https://i.imgur.com/c5lUSuf.png)
+A package for creating superellipse shapes in flutter.
 
 ## Getting Started
 
