@@ -1,9 +1,12 @@
+.vscode
 .DS_Store
 .dart_tool/
 
 .packages
 .pub/
 
+android/app
+android/local.properties
 build/
 ios/.generated/
 ios/Flutter/Generated.xcconfig
