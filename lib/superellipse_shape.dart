@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:meta/meta.dart';
 import 'package:flutter/material.dart';
 
 class SuperEllipseShape extends ShapeBorder {
