@@ -12,7 +12,7 @@ class SuperEllipseDemo extends StatelessWidget {
     
     return Material(
       color: Colors.blueAccent[400],
-      shape: SuperEllipseShape(5.0),
+      shape: SuperellipseShape(5.0),
       child: Container(
         width: 100.0,
         height: 100.0,

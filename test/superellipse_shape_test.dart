@@ -7,7 +7,7 @@ void main() {
 
     var n = 5.0;
 
-    SuperEllipseShape testShape = SuperEllipseShape(n);
+    SuperellipseShape testShape = SuperellipseShape(n);
 
     expect(testShape.n, 5.0);
 

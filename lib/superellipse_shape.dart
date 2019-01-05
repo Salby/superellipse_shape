@@ -1,39 +1,38 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class SuperEllipseShape extends ShapeBorder {
-
+class SuperellipseShape extends ShapeBorder {
   final double n;
   final BorderSide side;
 
-  SuperEllipseShape(this.n, {
+  SuperellipseShape(
+    this.n, {
     this.side = BorderSide.none,
-  }) : assert(n != null),
-       assert(side != null);
+  })  : assert(n != null),
+        assert(side != null);
 
   @override
   EdgeInsetsGeometry get dimensions => EdgeInsets.all(side.width);
 
   @override
   ShapeBorder scale(double t) {
-    return SuperEllipseShape(
+    return SuperellipseShape(
       n,
       side: side.scale(t),
     );
   }
 
   @override
-    Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return _superEllipsePath(rect.deflate(side.width), n);
+  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
+    return _superellipseShapePath(rect.deflate(side.width), n);
   }
 
   @override
-    Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    return _superEllipsePath(rect, n);
+  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+    return _superellipseShapePath(rect, n);
   }
 
-  static Path _superEllipsePath(Rect rect, double n) {
-
+  static Path _superellipseShapePath(Rect rect, double n) {
     Path path = new Path();
 
     // Define steps.
@@ -51,20 +50,18 @@ class SuperEllipseShape extends ShapeBorder {
       var y = pow(sin(t).abs(), na) * b * sin(t).sign;
       apply(x, y);
       apply = path.lineTo;
-      t+= piece;
+      t += piece;
     }
 
     path.close();
 
     return path.shift(rect.center);
-  
   }
-  
+
   @override
   void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
     Path path = getOuterPath(rect, textDirection: textDirection);
     var paint = side.toPaint();
     canvas.drawPath(path, paint);
   }
-
 }

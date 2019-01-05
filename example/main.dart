@@ -11,7 +11,7 @@ class ExampleApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: SuperEllipseCard(
+          child: SuperellipseCard(
             child: Padding(
               padding: EdgeInsets.all(18.0),
               child: Text('This is a nice, rounded card.'),
@@ -25,13 +25,13 @@ class ExampleApp extends StatelessWidget {
 
 }
 
-class SuperEllipseCard extends StatelessWidget {
+class SuperellipseCard extends StatelessWidget {
 
   final Color color;
   final Widget child;
   final double elevation;
 
-  SuperEllipseCard({
+  SuperellipseCard({
     this.color,
     this.child,
     this.elevation,
@@ -43,7 +43,7 @@ class SuperEllipseCard extends StatelessWidget {
     return Material(
       clipBehavior: Clip.antiAlias,
 
-      shape: SuperEllipseShape(5.0),
+      shape: SuperellipseShape(5.0),
       
       color: color ?? Colors.white,
       shadowColor: color ?? Colors.black38,
