@@ -5,7 +5,7 @@
 A package for creating superellipse shapes in flutter.
 
 ```dart
-class SuperEllipseDemo extends StatelessWidget {
+class SuperellipseDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
