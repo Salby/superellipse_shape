@@ -4,10 +4,8 @@ import 'package:superellipse_shape/superellipse_shape.dart';
 void main() => runApp(ExampleApp());
 
 class ExampleApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       home: Scaffold(
         body: Center(
@@ -20,13 +18,10 @@ class ExampleApp extends StatelessWidget {
         ),
       ),
     );
-
   }
-
 }
 
 class SuperellipseCard extends StatelessWidget {
-
   final Color color;
   final Widget child;
   final double elevation;
@@ -39,18 +34,13 @@ class SuperellipseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Material(
       clipBehavior: Clip.antiAlias,
-
-      shape: SuperellipseShape(5.0),
-      
+      shape: SuperellipseShape(25.0),
       color: color ?? Colors.white,
       shadowColor: color ?? Colors.black38,
       elevation: elevation ?? 1.0,
       child: child,
     );
-
   }
-
 }
