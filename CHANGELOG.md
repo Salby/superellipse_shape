@@ -3,7 +3,7 @@
 ## 0.1.3 - 2019-01-07
 
 ### Changed
-- Changed the way the superellipse is calculated in in order to look more even on shapes that arent completely square.
+- Changed the way the superellipse is calculated in in order to look more even on shapes that aren't completely square.
 - Edited the examples to reflect changes in how the shape is calculated.
 - Changed the name of the property `n` to the more meaningful `superRadius`.
 
