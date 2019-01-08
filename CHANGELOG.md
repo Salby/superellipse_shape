@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5 - 2019-01-08
+
+### Fixed
+- Fixed case where if you had a radius that was bigger than the shortest side of the rectangle, you would get a strange tie-fighter shape. This was solved by clamping all radii that were larger than the shortest side of the rectangle to the length of that side.
+
 ## 0.1.4 - 2019-01-08
 
 ### Added
