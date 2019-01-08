@@ -2,15 +2,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:superellipse_shape/superellipse_shape.dart';
 
 void main() {
-
   test('Shape test', () {
+    var superRadius = 25.0;
 
-    var n = 5.0;
+    SuperellipseShape testShape = SuperellipseShape(superRadius);
 
-    SuperellipseShape testShape = SuperellipseShape(n);
-
-    expect(testShape.n, 5.0);
-
+    expect(testShape.superRadius, 25.0);
   });
-
 }
