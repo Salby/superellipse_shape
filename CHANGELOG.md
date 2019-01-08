@@ -9,6 +9,9 @@
 ### Removed
 - Removed unused "dart:math" import.
 
+### Fixed
+- Fixed testing on old `n` property that was renamed to `superRadius` in `0.1.3`.
+
 ## 0.1.3 - 2019-01-07
 
 ### Changed
