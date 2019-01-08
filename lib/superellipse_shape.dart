@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 /// Creates a shape constituting a transition between a rectangle and a circle.
@@ -11,13 +12,21 @@ import 'package:flutter/material.dart';
 /// ```
 class SuperellipseShape extends ShapeBorder {
   /// The arguments must not be null.
-  SuperellipseShape(
-    this.superRadius, {
+  SuperellipseShape({
     this.side = BorderSide.none,
-  })  : assert(superRadius != null),
-        assert(side != null);
+    this.borderRadius = BorderRadius.zero,
+  })  : assert(side != null),
+        assert(borderRadius != null);
 
-  final double superRadius;
+  /// The radii for each corner.
+  ///
+  /// Each corner [Radius] defines the endpoints for a line segment that
+  /// spans the corner. The endpoints are located in the same place as
+  /// They would be for [RoundedRectangleBorder].
+  ///
+  /// Negative radius values are clamped to 0.0 by [getInnerPath] and
+  /// [getOuterPath].
+  final BorderRadiusGeometry borderRadius;
 
   /// The style of this border.
   final BorderSide side;
@@ -28,55 +37,48 @@ class SuperellipseShape extends ShapeBorder {
   @override
   ShapeBorder scale(double t) {
     return SuperellipseShape(
-      superRadius,
       side: side.scale(t),
+      borderRadius: borderRadius * t,
     );
   }
 
-  Path _getPath(Rect rect, double superRadius) {
-    /// Define the different variables of [rect].
-    final center = rect.center;
-    final double left = rect.left;
-    final double right = rect.right;
-    final double top = rect.top;
-    final double bottom = rect.bottom;
+  Path _getPath(RRect rrect) {
+    /// Define the different variables of [rrect].
+    final double left = rrect.left;
+    final double right = rrect.right;
+    final double top = rrect.top;
+    final double bottom = rrect.bottom;
 
-    /// [centerX] and [centerY] are only used if [superRadius] is null.
-    final double centerX = center.dx;
-    final double centerY = center.dy;
+    final double tlRadiusX = math.max(0.0, rrect.tlRadiusX);
+    final double tlRadiusY = math.max(0.0, rrect.tlRadiusY);
+    final double trRadiusX = math.max(0.0, rrect.trRadiusX);
+    final double trRadiusY = math.max(0.0, rrect.trRadiusY);
+    final double blRadiusX = math.max(0.0, rrect.blRadiusX);
+    final double blRadiusY = math.max(0.0, rrect.blRadiusY);
+    final double brRadiusX = math.max(0.0, rrect.brRadiusX);
+    final double brRadiusY = math.max(0.0, rrect.brRadiusY);
 
-    /// Defaults to predefined shape if [superRadius] is null.
-    if (superRadius == null) {
-      return Path()
-        ..moveTo(left, centerY)
-        ..cubicTo(left, top, left, top, centerX, top)
-        ..cubicTo(right, top, right, top, right, centerY)
-        ..cubicTo(right, bottom, right, bottom, centerX, bottom)
-        ..cubicTo(left, bottom, left, bottom, left, centerY)
-        ..close();
-    }
-
-    /// Construct path from [rect] variables and [superRadius].
     return Path()
-      ..moveTo(left, top + superRadius)
-      ..cubicTo(left, top, left, top, left + superRadius, top)
-      ..lineTo(right - superRadius, top)
-      ..cubicTo(right, top, right, top, right, top + superRadius)
-      ..lineTo(right, bottom - superRadius)
-      ..cubicTo(right, bottom, right, bottom, right - superRadius, bottom)
-      ..lineTo(left + superRadius, bottom)
-      ..cubicTo(left, bottom, left, bottom, left, bottom - superRadius)
+      ..moveTo(left, top + tlRadiusX)
+      ..cubicTo(left, top, left, top, left + tlRadiusY, top)
+      ..lineTo(right - trRadiusX, top)
+      ..cubicTo(right, top, right, top, right, top + trRadiusY)
+      ..lineTo(right, bottom - blRadiusX)
+      ..cubicTo(right, bottom, right, bottom, right - blRadiusY, bottom)
+      ..lineTo(left + brRadiusX, bottom)
+      ..cubicTo(left, bottom, left, bottom, left, bottom - brRadiusY)
       ..close();
   }
 
   @override
   Path getInnerPath(Rect rect, {TextDirection textDirection}) {
-    return _getPath(rect, superRadius);
+    return _getPath(
+        borderRadius.resolve(textDirection).toRRect(rect).deflate(side.width));
   }
 
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    return _getPath(rect, superRadius);
+    return _getPath(borderRadius.resolve(textDirection).toRRect(rect));
   }
 
   @override
