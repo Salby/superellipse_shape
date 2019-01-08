@@ -42,6 +42,9 @@ class SuperellipseShape extends ShapeBorder {
     );
   }
 
+  double _clampToShortest(RRect rrect, double value) =>
+      value > rrect.shortestSide ? rrect.shortestSide : value;
+
   Path _getPath(RRect rrect) {
     /// Define the different variables of [rrect].
     final double left = rrect.left;
@@ -49,14 +52,24 @@ class SuperellipseShape extends ShapeBorder {
     final double top = rrect.top;
     final double bottom = rrect.bottom;
 
-    final double tlRadiusX = math.max(0.0, rrect.tlRadiusX);
-    final double tlRadiusY = math.max(0.0, rrect.tlRadiusY);
-    final double trRadiusX = math.max(0.0, rrect.trRadiusX);
-    final double trRadiusY = math.max(0.0, rrect.trRadiusY);
-    final double blRadiusX = math.max(0.0, rrect.blRadiusX);
-    final double blRadiusY = math.max(0.0, rrect.blRadiusY);
-    final double brRadiusX = math.max(0.0, rrect.brRadiusX);
-    final double brRadiusY = math.max(0.0, rrect.brRadiusY);
+    /// Radii will be clamped to the value of the shortest side
+    /// of [rrect] to avoid strange tie-fighter shapes.
+    final double tlRadiusX =
+        math.max(0.0, _clampToShortest(rrect, rrect.tlRadiusX));
+    final double tlRadiusY =
+        math.max(0.0, _clampToShortest(rrect, rrect.tlRadiusY));
+    final double trRadiusX =
+        math.max(0.0, _clampToShortest(rrect, rrect.trRadiusX));
+    final double trRadiusY =
+        math.max(0.0, _clampToShortest(rrect, rrect.trRadiusY));
+    final double blRadiusX =
+        math.max(0.0, _clampToShortest(rrect, rrect.blRadiusX));
+    final double blRadiusY =
+        math.max(0.0, _clampToShortest(rrect, rrect.blRadiusY));
+    final double brRadiusX =
+        math.max(0.0, _clampToShortest(rrect, rrect.brRadiusX));
+    final double brRadiusY =
+        math.max(0.0, _clampToShortest(rrect, rrect.brRadiusY));
 
     return Path()
       ..moveTo(left, top + tlRadiusX)

@@ -22,15 +22,15 @@ class ExampleApp extends StatelessWidget {
 }
 
 class SuperellipseCard extends StatelessWidget {
-  final Color color;
-  final Widget child;
-  final double elevation;
-
   SuperellipseCard({
     this.color,
     this.child,
     this.elevation,
   });
+
+  final Color color;
+  final Widget child;
+  final double elevation;
 
   @override
   Widget build(BuildContext context) {
