@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.4 - 2019-01-08
+
+### Removed
+- Removed unused "dart:math" import.
+
 ## 0.1.3 - 2019-01-07
 
 ### Changed
