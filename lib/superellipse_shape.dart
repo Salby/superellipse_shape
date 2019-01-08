@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-/// A rectangular shape but with a continuous rounded border that never
-/// becomes completely flat on one side.
+/// Creates a shape constituting a transition between a rectangle and a circle.
+///
+/// ```dart
+/// Widget build(BuildContext context) {
+///   return Material(
+///     shape: SuperellipseShape(25.0),
+///   ); // Material
+/// }
+/// ```
 class SuperellipseShape extends ShapeBorder {
   /// The arguments must not be null.
   SuperellipseShape(

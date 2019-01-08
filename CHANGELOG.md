@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+- Added details to example and readme code examples.
+- Added small example to `superellipse_shape.dart` class documentation.
+
 ### Removed
 - Removed unused "dart:math" import.
 

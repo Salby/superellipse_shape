@@ -13,11 +13,11 @@ class ExampleApp extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(18.0),
               child: Text('This is a nice, rounded card.'),
-            ),
-          ),
-        ),
-      ),
-    );
+            ), // Padding
+          ), // SuperellipseCard
+        ), // Center
+      ), // Scaffold
+    ); // MaterialApp
   }
 }
 
@@ -41,6 +41,6 @@ class SuperellipseCard extends StatelessWidget {
       shadowColor: color ?? Colors.black38,
       elevation: elevation ?? 1.0,
       child: child,
-    );
+    ); // Material
   }
 }
