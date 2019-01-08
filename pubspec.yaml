@@ -1,6 +1,6 @@
 name: superellipse_shape
 description: A package for creating superellipse shapes in flutter. A superellipse is used to make smooth rounded edges on a widget, smoother than border-radius.
-version: 0.1.3
+version: 0.1.4
 author: salby <srdlarsen@gmail.com>
 homepage: https://github.com/salby/superellipse_shape
 
