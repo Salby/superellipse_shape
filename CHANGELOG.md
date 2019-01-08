@@ -1,16 +1,17 @@
 # Changelog
 
-## [Unreleased]
+## 0.1.4 - 2019-01-08
 
 ### Added
 - Added details to example and readme code examples.
 - Added small example to `superellipse_shape.dart` class documentation.
 
-### Removed
-- Removed unused "dart:math" import.
+### Changed
+- Changed the way the border-radius of the shape is controlled. The class now uses `BorderRadiusGeometry` which also allows for control over individual corners.
+- Changed all examples and tests to be up-to-date with the new usage with `borderRadius`.
 
 ### Fixed
-- Fixed testing on old `n` property that was renamed to `superRadius` in `0.1.3`.
+- Fixed testing on old `n` property.
 
 ## 0.1.3 - 2019-01-07
 

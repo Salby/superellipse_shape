@@ -36,7 +36,9 @@ class SuperellipseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       clipBehavior: Clip.antiAlias,
-      shape: SuperellipseShape(25.0),
+      shape: SuperellipseShape(
+        borderRadius: BorderRadius.circular(28.0),
+      ), // SuperellipseShape
       color: color ?? Colors.white,
       shadowColor: color ?? Colors.black38,
       elevation: elevation ?? 1.0,

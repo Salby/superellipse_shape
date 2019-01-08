@@ -1,12 +1,15 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:superellipse_shape/superellipse_shape.dart';
 
 void main() {
   test('Shape test', () {
-    var superRadius = 25.0;
+    BorderRadiusGeometry borderRadius = BorderRadius.circular(28.0);
 
-    SuperellipseShape testShape = SuperellipseShape(superRadius);
+    SuperellipseShape testShape = SuperellipseShape(
+      borderRadius: borderRadius,
+    );
 
-    expect(testShape.superRadius, 25.0);
+    expect(testShape.borderRadius, BorderRadius.circular(28.0));
   });
 }
