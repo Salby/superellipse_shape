@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 /// ```dart
 /// Widget build(BuildContext context) {
 ///   return Material(
-///     shape: SuperellipseShape(25.0),
+///     shape: SuperellipseShape(
+///       borderRadius: BorderRadius.circular(24.0),
+///     ),
 ///   ); // Material
 /// }
 /// ```
@@ -14,9 +16,8 @@ class SuperellipseShape extends ShapeBorder {
   /// The arguments must not be null.
   SuperellipseShape({
     this.side = BorderSide.none,
-    this.borderRadius = BorderRadius.zero,
-  })  : assert(side != null),
-        assert(borderRadius != null);
+    required this.borderRadius,
+  });
 
   /// The radii for each corner.
   ///
@@ -84,18 +85,18 @@ class SuperellipseShape extends ShapeBorder {
   }
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection textDirection}) {
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return _getPath(
         borderRadius.resolve(textDirection).toRRect(rect).deflate(side.width));
   }
 
   @override
-  Path getOuterPath(Rect rect, {TextDirection textDirection}) {
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
     return _getPath(borderRadius.resolve(textDirection).toRRect(rect));
   }
 
   @override
-  void paint(Canvas canvas, Rect rect, {TextDirection textDirection}) {
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
     if (rect.isEmpty) return;
     switch (side.style) {
       case BorderStyle.none:

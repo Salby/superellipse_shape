@@ -23,26 +23,17 @@ class ExampleApp extends StatelessWidget {
 
 class SuperellipseCard extends StatelessWidget {
   SuperellipseCard({
-    this.color,
+    Key? key,
     this.child,
-    this.elevation,
-  });
+  }) : super(key: key);
 
-  final Color color;
-  final Widget child;
-  final double elevation;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      clipBehavior: Clip.antiAlias,
-      shape: SuperellipseShape(
-        borderRadius: BorderRadius.circular(28.0),
-      ), // SuperellipseShape
-      color: color ?? Colors.white,
-      shadowColor: color ?? Colors.black38,
-      elevation: elevation ?? 1.0,
+    return Card(
+      shape: SuperellipseShape(borderRadius: BorderRadius.circular(28)),
       child: child,
-    ); // Material
+    );
   }
 }
