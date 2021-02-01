@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 /// ```dart
 /// Widget build(BuildContext context) {
 ///   return Material(
-///     shape: SuperellipseShape(25.0),
-///   ); // Material
+///     shape: SuperellipseShape(
+///       borderRadius: BorderRadius.circular(24.0),
+///     ),
+///   );
 /// }
 /// ```
 class SuperellipseShape extends ShapeBorder {
