@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0-nullsafety.0 - 2021-02-01
+
+### Changed
+- [Breaking] Migrated to null safety.
+- Changed the example and some documentation.
+
 ## 0.1.5 - 2019-01-08
 
 ### Fixed
