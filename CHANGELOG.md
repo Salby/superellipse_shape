@@ -2,6 +2,9 @@
 
 ## 0.1.6 - 2021-02-01
 
+### Added
+- Added a new "golden" test.
+
 ### Changed
 - Changed some documentation.
 
