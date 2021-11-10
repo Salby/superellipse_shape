@@ -4,12 +4,12 @@
 
 A package for creating superellipse shapes in flutter.
 
+___
+
 ```dart
 class SuperellipseDemo extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    
     return Material(
       color: Colors.blueAccent[400],
       shape: SuperellipseShape(
@@ -20,8 +20,6 @@ class SuperellipseDemo extends StatelessWidget {
         height: 100.0,
       ), // Container
     ); // Material
-
   }
-
 }
 ```

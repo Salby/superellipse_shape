@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 - 2021-11-10
+
+Added support for null-safety.
+
 ## 0.1.6 - 2021-02-01
 
 ### Added

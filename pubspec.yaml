@@ -1,6 +1,6 @@
 name: superellipse_shape
 description: A package for creating superellipse shapes in flutter. A superellipse is a shape constituting a transition between a rectangle and a circle.
-version: 0.1.6
+version: 0.2.0
 homepage: https://github.com/salby/superellipse_shape
 
 environment:
