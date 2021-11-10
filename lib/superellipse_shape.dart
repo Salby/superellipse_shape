@@ -17,8 +17,7 @@ class SuperellipseShape extends ShapeBorder {
   SuperellipseShape({
     this.side = BorderSide.none,
     this.borderRadius = BorderRadius.zero,
-  })  : assert(side != null),
-        assert(borderRadius != null);
+  });
 
   /// The radii for each corner.
   ///
